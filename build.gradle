@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    flatDir dirs: 'lib'
+}
+
+dependencies {
+    compile name: 'fmu-framework', version: '1.2+'
+    compile 'org.siani.javafmi:fmu-wrapper:+'
+    testCompile name: 'fmu-builder', version: '2.+'
+    testCompile 'junit:junit:+'
+}
+
+sourceSets.main.java { srcDirs 'src' }
+sourceSets.main.resources { srcDirs 'res' }
+sourceSets.test.java { srcDirs 'test' }
