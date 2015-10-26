@@ -10,7 +10,6 @@ public class Matryoshka extends FmiSimulation {
 
     private static final String CAR_AS_SIMULATION_RESOURCE = "Car_as_simulation_resource.fmu";
     private static final String CAR_AS_FMU_RESOURCE = "Car_as_fmu_resource.fmu";
-    private static final String CAR_AS_FMU_RESOURCE_2 = "Car_as_fmu_resource2.fmu";
     private static final String CAR_SPEED = "car.speed";
     private static final String CAR_DISTANCE = "car.distance";
     public static final double INITIAL_SPEED = 20.;
@@ -20,10 +19,9 @@ public class Matryoshka extends FmiSimulation {
 
     @Override
     public Status init() {
-        //loadResource(CAR_AS_SIMULATION_RESOURCE);
-        //sedan = new Simulation(CAR_AS_SIMULATION_RESOURCE);
+        loadResource(CAR_AS_SIMULATION_RESOURCE);
+        sedan = new Simulation(CAR_AS_SIMULATION_RESOURCE);
         coupe = new Simulation(CAR_AS_FMU_RESOURCE);
-        sedan = new Simulation(CAR_AS_FMU_RESOURCE_2);
         sedan.init(0.);
         coupe.init(0.);
         sedan.write(CAR_SPEED).with(INITIAL_SPEED);
