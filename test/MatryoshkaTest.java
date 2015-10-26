@@ -15,7 +15,7 @@ public class MatryoshkaTest {
 
     @Before
     public void setUp() {
-        String args[] = "Matryoshka.jar -p win64 -i fmu-res/Car_as_fmu_resource.fmu fmu-res/Car_as_fmu_resource2.fmu".split(" ");
+        String args[] = "Matryoshka.jar -p lin64 win64 -i fmu-res/Car_as_fmu_resource.fmu".split(" ");
         new ShellFmuBuilder(args).build();
     }
 
